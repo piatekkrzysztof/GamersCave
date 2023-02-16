@@ -1,0 +1,45 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GamersCave</title>
+    <link rel="stylesheet" href="{% static 'GamersCave/style.css' %}" type="text/css"/>
+    <script src="{% static 'GamersCave/time.js'%} "></script>
+
+
+</head>
+<body onload="timer()">
+
+<div id ="container">
+
+    <div class="rectangle">
+        <a href="/" class="tilelink"><div id = logo>GamersCave</div></a>
+        <div id  ="zegar">00:00:00</div>
+        <div style="clear:both"></div>
+    </div>
+
+    <ul class="menu">
+        <li><a href="/add_studio/">Dodaj studio</a></li>
+        <li><a href=/all_studios/>Pokaz studia</a></li>
+        <li><a href="/add_game/">Dodaj gre</a></li>
+        <li><a href="/all_games/">Pokaz gry</a></li>
+        <li><a href="/add_article/">Dodaj Artykul</a></li>
+        <li><a href="/all_articles/">Pokaz Artykuly</a></li>
+        <li><a href="/gamecave/forum/">Forum(dla zalogowanych)</a></li>
+    </ul>
+    <ul class="menu">
+        <li><a href="/add_user/">Zarejestruj</a></li>
+        <li><a href="/login/">Zaloguj</a></li>
+        <li><a href="/logout/">Wyloguj</a></li>
+    </ul>
+
+        <h3 class="error">{{ msg }}</h3>
+        <div class="template">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+</div>
+</body>
+</html>

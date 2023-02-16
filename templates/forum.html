@@ -1,0 +1,9 @@
+{% extends 'home.html' %}
+{% block content %}
+    <a href="/gamecave/forum/addpost/">Dodaj post!</a>
+    {% for p in posts %}
+    <br><h3><a href="/gamecave/forum/{{p.id }}">{{ p.title }}</a>{{ p.user.username }} {{ p.date }} Liczba odpowiedzi:{{ p.post_answer_set.all.count }} <a href="/gamecave/forum/{{p.id }}">Odpowiedz</a></h3><br><h4>{{p.text}}</h4><br><br>
+    {% endfor %}
+
+
+{% endblock %}

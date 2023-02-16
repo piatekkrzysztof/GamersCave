@@ -1,0 +1,12 @@
+{% extends 'home.html' %}
+{% block content %}
+    {{ user.username }}
+    {{ user.email }}
+    <br>
+    {{ user.username }}'s Reviews:
+    <br>
+    {% for r in reviews %}
+    <h3>{{ r.rate }}/10 {{ r.game.name }}</h3>
+    <h4>{{ r.reviev }}</h4>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'home.html' %}
+{% block content %}
+    <form method="POST">{% csrf_token %}
+        Nazwa studia:<br>{{form.name}}<br>
+        Czy studio wciąż funcjonuje?:<br>{{form.is_active}}<br><br>
+    <input type="submit">
+    </form>
+{% endblock %}

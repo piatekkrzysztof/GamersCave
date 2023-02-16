@@ -1,0 +1,11 @@
+{% extends 'home.html' %}
+{% block content %}
+    {% for s in studio %}
+    <h1>{{ s.name }} :</h1>
+        {% for g in s.game_set.all %}
+            <h2>{{ g.name }}</h2>
+
+        {% endfor %}
+    {% endfor %}
+
+{% endblock %}

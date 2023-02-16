@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% block content %}
+    <form method="POST">{% csrf_token %}
+
+    <h2>{{ post.title }} by {{ post.user.username }} added {{ post.date }}</h2>
+    <h3>{{ post.text }}</h3>
+    answers:
+    {{ form.as_p }}
+    <input type="submit">
+    {% for a in answers %}
+    <h4>{{ a.user.username }} {{ a.date }}</h4>
+        <h5>{{ a.text }}</h5>
+    {% endfor %}
+    </form>
+
+
+{% endblock %}

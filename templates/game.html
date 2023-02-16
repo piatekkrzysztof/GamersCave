@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% block content %}
+    <form method="POST">{% csrf_token %}
+    <h3>{{ game.name }} {{ game.year }}</h3>
+    <h4>{{ game.description }}<br><br> Studio: {{ game.studio.name }}</h4>
+    {% if form %}
+        Oceń tą grę!<br>
+        Wybierz ocene:<br>{{ form.rate }}<br>Napisz komentarz!:<br>{{ form.reviews }}<br>
+    <input type="submit"><br>
+    {% endif %}
+    {{ log_msg }}<br><br>
+    Oceny naszych użytkowników:<br><br>
+    {% for g in gamerating %}
+        {{ forloop.counter }}. Rate: {{ g.rate }} by {{ g.user.username }}<br>{{ g.reviev }} <br><br>
+    {% endfor %}
+    </form>
+{% endblock %}

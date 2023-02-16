@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+{% block content %}
+    <form method="POST">{% csrf_token %}
+        Nazwa gry:<br>{{form.name}}<br>
+        Rok produkcji:<br>{{form.year}}<br>
+        Opis(opcjonalne)<br>{{form.description}}<br>
+        Studio:<br>{{form.studio}}<br><br>
+    <input type="submit">
+    </form>
+{% endblock %}

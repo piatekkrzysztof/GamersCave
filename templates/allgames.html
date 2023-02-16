@@ -1,0 +1,9 @@
+{% extends 'home.html' %}
+{% block content %}
+    {% for g in game %}
+        <a href="/game/{{ g.id }}">{{g.name}}</a>  {{ g.year }}  {{g.studio.name }} liczba ocen:{{ g.rates.count }}<br>
+
+
+    {% endfor %}
+
+{% endblock %}
